@@ -1,0 +1,21 @@
+SELECT * FROM APP.STUDENT;
+
+insert into APP.STUDENT VALUES(1, 'Jan', 'Kowalski', 1);
+insert into APP.STUDENT VALUES(2, 'Marek', 'Adamowicz', 2);
+insert into APP.STUDENT VALUES(3, 'Julia', 'Liszka', 3);
+insert into APP.STUDENT VALUES(4, 'Jakub', 'Stolak', 1);
+insert into APP.STUDENT VALUES(5, 'Konrad', 'Kwiat', 3);
+insert into APP.STUDENT VALUES(6, 'Aleksandra', 'Lipuska', 2);
+
+CREATE TABLE STUDENT
+(
+ID_STUDENTA INTEGER NOT NULL PRIMARY KEY,
+IMIE VARCHAR (15) NOT NULL,
+NAZWISKO VARCHAR (30) NOT NULL,
+ID_KATEDRY INTEGER,
+FOREIGN KEY (ID_KATEDRY) REFERENCES KATEDRA(ID_KATEDRY)
+)
+
+INSERT INTO KATEDRA (ID_KATEDRY, SKROT, NAZWA) VALUES(1, 'KIO','Katedra Inzynierii Oprogramowania');
+insert into APP.KATEDRA VALUES(2, "KASK", "Katedra Architektury Systemow Komputerowych");
+insert into APP.KATEDRA VALUES(3, "KAiMS" "Katedra Algorytmow i Modelowania Systemow");
